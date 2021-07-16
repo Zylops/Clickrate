@@ -9,18 +9,17 @@ from flask import (
     session,
 )
 
-from flask_sqlalchemy import SQLAlchemy
 import json
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3' #Connects to database using SQL protocol thing idk
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #To prevent warnings
+
 
 secrex = json.loads(open("secrets.json", "r").read())
-app = Flask(__name__)
-app.secret_key = secrex["secret_key"]
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"  # Connects to database using SQL protocol thing idk
-
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  # OPTIONAL: So that the console doesnt get spammed with notifications
-
 db = SQLAlchemy(app)
+
 
 class Titles(db.Model):
     _id = db.Column(db.Integer(), primary_key=True)
