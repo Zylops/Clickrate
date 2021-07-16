@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if titles %}
+{% for ttl in titles %}
+<div class="cards w3-card w3-round-xlarge w3-animate-right">
+    <h3 class="title">{{ttl.title_content}}</h3>
+    <p class="author">By <a href="/profile/{{ttl.author}}"><span class="link">{{ttl.author}}</a></span></p>
+    <hr>
+
+    <p style="color:#9adbab; font-weight:900;">Rank #{{ttl.ranking}}</p>
+
+    <form action="#" method="post" style="display:inline;">
+        <input class="hidden" type="text" name="title_id" value="{{ttl._id}}">
+        <input class="hidden" type="text" name="title_rank" value="{{ttl.ranking}}">
+        <input class="icon-button" type="image" src="{{url_for('static', filename='upvote.png')}}">
+    </form>
+
+    {% if session['un'] == ttl.author %}
+    <form action="{{url_for('delete')}}" method="post" style="display:inline;">
+        <input class="hidden" type="text" name="title_content" value="{{ttl.title_content}}">
+        <input class="icon-button" type="image" src="{{url_for('static', filename='delete.png')}}">
+    </form>
+
+    <form action="/edit" method="get" style="display:inline;">
+        <input class="hidden" type="text" for="title_id" name="title_id" value="{{ttl._id}}">
+        <input class="icon-button" type="image" src="{{url_for('static', filename='edit.png')}}">
+    </form>
+    {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

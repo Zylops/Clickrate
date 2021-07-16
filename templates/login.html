@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Login/SignUp!{% endblock %}
+
+{% block content %}
+
+<div class="cards w3-card w3-round-xlarge w3-animate-zoom">
+  <h2 class="heading">Login or Sign Up!</h2>
+  <p class="label">If you don't have an account already, we'll make one for you!</p>
+  <hr>
+
+  <form class="form" method="post" action="#">
+    <p class="label">What should we call you?</p>
+    <input class="w3-input w3-round-large" type="text" name="username">
+    <p class="label">Your super secret password:</p>
+    <input class="w3-input input w3-round-large"  type="password" name="password" value="{{un}}">
+    <hr>
+    <input class="w3-button w3-round submit" type="submit" value="Login/Sign up">
+  </form>
+
+</div>
+
+{% endblock %}

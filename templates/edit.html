@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit!{% endblock %}
+
+{% block content %}
+
+<div class="cards w3-card w3-round-xlarge w3-animate-zoom">
+  <h2 class="heading">Edit Post!</h2>
+  <p class="label">If you made a slight mistake, dont worry! You can edit your title here.</p>
+  <hr>
+
+  <form class="form" method="post" action="#">
+    <input class="hidden" type="text" name="title_id" value="{{request.args.get('title_id')}}">
+    <p class="label">Your new title:</p>
+    <textarea class="w3-input input w3-round-large" name="new_title"></textarea>
+    <hr>
+    <input class="w3-button w3-round submit" type="submit" value="Edit">
+  </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+p,
+a {
+  color: rgb(255, 255, 255);
+  font-family: "Encode Sans SC", sans-serif;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-weight: bolder;
+}
+
+hr {
+  border: 1px solid #616161;
+}
+
+head {
+  width: 100%;
+}
+
+body {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1064%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(50%2c 48%2c 49%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c604.066C113.919%2c606.271%2c210.399%2c535.448%2c314.836%2c489.894C440.957%2c434.881%2c589.843%2c415.814%2c676.54%2c308.966C771.788%2c191.58%2c840.918%2c31.233%2c806.42%2c-115.946C772.182%2c-262.014%2c600.147%2c-321.516%2c502.135%2c-435.102C403.842%2c-549.014%2c370.357%2c-729.229%2c230.143%2c-783.795C89.046%2c-838.705%2c-69.434%2c-770.503%2c-209.02%2c-711.858C-337.466%2c-657.894%2c-456.058%2c-578.2%2c-534.032%2c-462.741C-607.187%2c-354.417%2c-609.667%2c-219.713%2c-628.717%2c-90.396C-647.838%2c39.4%2c-710.258%2c180.674%2c-645.635%2c294.852C-581.144%2c408.797%2c-425.184%2c421.299%2c-307.098%2c477.854C-205.218%2c526.648%2c-112.941%2c601.88%2c0%2c604.066' fill='%232a2829'%3e%3c/path%3e%3cpath d='M1920 1828.516C2056.372 1851.354 2187.822 1743.6950000000002 2280.702 1641.263 2363.492 1549.958 2358.964 1415.424 2399.963 1299.192 2436.476 1195.679 2500.069 1104.821 2508.527 995.383 2518.515 866.1469999999999 2527.159 724.5360000000001 2452.567 618.528 2376.165 509.948 2238.855 465.25300000000004 2110.811 430.158 1984.506 395.53999999999996 1852.052 383.76800000000003 1726.029 419.39700000000005 1599.239 455.24300000000005 1472.597 519.78 1401.478 630.698 1333.351 736.95 1372.208 873.725 1354.587 998.706 1337.029 1123.24 1240.4940000000001 1252.214 1298.087 1364.018 1355.9740000000002 1476.394 1528.117 1456.547 1629.395 1532.19 1742.53 1616.688 1780.732 1805.193 1920 1828.516' fill='%233b3839'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1064'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+
+.submit {
+  width: 100%;
+  font-family: "Encode Sans SC", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #323031;
+}
+
+.submit:hover {
+  background-color: #454545;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  display: inline;
+  color: #ffc857;
+}
+
+.label {
+  color: white;
+}
+
+.clickrate {
+  color: white;
+  margin: 0px;
+  font-family: "Otomanopee One", sans-serif;
+}
+
+.heading {
+  font-family: "Montserrat", sans-serif;
+  color: #ffc857;
+}
+
+.author {
+  color: #b0b0b0;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo {
+    display: inline;
+    width:50px;
+    height: 50px;
+}
+
+.cards {
+  text-align: left;
+  background-color: #454545;
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  height: auto;
+}
+
+.flashed {
+  font-size: 20px;
+  padding: 5px;
+  background-color: #2f302e;
+}
+
+.nbitem {
+  text-decoration: none;
+  color: #323031;
+  font-size: 22px;
+  padding: 15px;
+}
+
+.nbitem:hover {
+  border-radius: 10px;
+  color: #d4a373;
+  text-decoration: none;
+  background-color: #323031;
+}
+
+.navbar {
+  max-width: 100%;
+  text-align: left;
+  background-color: #ffc857;
+  padding: 25px;
+}
+
+.title {
+  display: inline;
+}
+
+.icon-button {
+  display: inline;
+  width: 20px;
+  height: 20px;
+}
