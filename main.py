@@ -12,7 +12,10 @@ from flask import (
 import json
 from flask_sqlalchemy import SQLAlchemy
 
+secrex = json.loads(open('secrets.json', 'r').read())
+
 app = Flask(__name__)
+app.secret_key = secrex['secret_key']
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3' #Connects to database using SQL protocol thing idk
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #To prevent warnings
 
