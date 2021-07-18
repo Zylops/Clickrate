@@ -46,6 +46,10 @@ body {
   font-family: "Otomanopee One", sans-serif;
 }
 
+.desc {
+  font-size:20px; color:#FFC857; margin:0px;
+}
+
 .heading {
   font-family: "Montserrat", sans-serif;
   color: #ffc857;
@@ -102,6 +106,10 @@ body {
 }
 
 .title {
+  display: inline;
+}
+
+.title-buttons {
   display: inline;
 }
 

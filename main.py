@@ -9,18 +9,17 @@ from flask import (
     session,
 )
 
-import json
+import json, secrets
 from flask_sqlalchemy import SQLAlchemy
 
 secrex = json.loads(open('secrets.json', 'r').read())
 
 app = Flask(__name__)
 app.secret_key = secrex['secret_key']
+adminpw = secrex['admin']
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3' #Connects to database using SQL protocol thing idk
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #To prevent warnings
 
-
-secrex = json.loads(open("secrets.json", "r").read())
 db = SQLAlchemy(app)
 
 
@@ -39,10 +38,16 @@ class User(db.Model):
     _id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(50))
     password = db.Column(db.String(50))
+    hash = db.Column(db.String(32))
 
     def __init__(self, username, password):
         self.username = username
         self.password = password
+        self.hash = secrets.token_hex(16)
+
+@app.before_request
+def perm_cookies():
+    session.permanent = True
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -82,6 +87,12 @@ def login():
             flash("Registered a new account!")
             return redirect(url_for("home"))
 
+@app.route('/logout')
+def logout():
+    session['un'] = None
+    flash('Logged out!')
+    return redirect(url_for('home'))
+    
 
 @app.route('/profile/<usr>')
 def profile(usr):
@@ -92,14 +103,15 @@ def profile(usr):
 def add():
     if request.method == "GET":
         try:
-            return render_template("add.html", un=session["un"])
-        except KeyError:
-            return render_template("add.html", un="")
+            if session['un']:
+                return render_template("add.html")
+        except:
+            flash('You need to be logged in to add a title!')
+            return redirect(url_for('home'))
     else:
-        ttl = Titles(request.form["title_name"], request.form["author"])
+        ttl = Titles(request.form["title_name"], session['un'])
         db.session.add(ttl)
         db.session.commit()
-        session["un"] = request.form["title_name"]
         flash("Title added!")
         return redirect(url_for("home"))
 
