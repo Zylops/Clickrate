@@ -12,23 +12,25 @@
     <link href="{{url_for('static', filename='main.css')}}" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <title>{% block title %}{% endblock %} - Clickrate</title>
 
     <br><br>
 
-    <img src="{{url_for('static', filename='cricon.png')}}" class="logo w3-animate-top">
-    <h1 class="w3-monospace clickrate w3-animate-top">Clickrate!</h1>
-    <p style="font-size:20px; color:#FFC857; margin:0px;" class="w3-animate-top">A web app to rate different titles!</p>
+    <img src="{{url_for('static', filename='cricon.png')}}" class="logo animate__animated animate__backInDown">
+    <h1 class="clickrate animate__animated animate__bounce">Clickrate!</h1>
+    <p style="font-size:20px; color:#FFC857; margin:0px;" class="animate__animated animate__pulse">A web app to rate different titles!</p>
 
     <br><br>
 
-    <div class="navbar w3-animate-opacity mobilehidden">
-    <a href="{{url_for('home')}}" class="nbitem w3-animate-left">Home</a>
-    <a href="/add" class="nbitem w3-animate-left">Add a Title!</a>
+    <div class="navbar animate__animated animate__fadeIn mobilehidden">
+    <a href="{{url_for('home')}}" class="nbitem animate__animated animate__bounceIn">Home</a>
+    <a href="/add" class="nbitem animate__animated animate__bounceIn">Add a Title!</a>
     {% if session['un'] == None %}
-    <a href="/login" class="nbitem w3-animate-left">Login/Sign Up!</a>
+    <a href="/login" class="nbitem animate__animated animate__bounceIn">Login/Sign Up!</a>
     {% else %}
-    <a href="/logout" class="nbitem w3-animate-left">Logout!</a>
+    <a href="/logout" class="nbitem animate__animated animate__bounceIn">Logout!</a>
     {% endif %}
     </div>
 
@@ -51,7 +53,7 @@
 
     <br><br>
 
-    <div class="w3-animate-bottom">
+    <div class="animate__animated animate__bounceInUp">
         <hr>
         <p style="color:white;">Made with slight frustration at powershell by Zylops</p>
     </div>
